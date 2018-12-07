@@ -3,13 +3,13 @@ module Fishbowl::Requests
     builder = Nokogiri::XML::Builder.new do |xml|
       xml.request {
         xml.GetAccountBalanceRq {
-          xml.Account (account.is_a?(Account) ? account.name : account)
+          xml.Account (account_name)
         }
       }
     end
+    _, response = Fishbowl::Objects::BaseObject.new.send_request(builder.to_xml, "GetAccountBalanceRs")
 
-    _, _, response = Fishbowl::Objects::BaseObject.new.send_request(builder, "GetAccountBalanceRs")
-
-    response.xpath("//Account/Balance").first.inner_text
+    # response.xpath("//Account/Balance").first.inner_text
+    XmlSimple.xml_in(response.to_s)
   end
 end

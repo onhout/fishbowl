@@ -1,11 +1,10 @@
 require 'socket'
 require 'base64'
 require 'singleton'
-
 require 'nokogiri'
+require 'xmlsimple'
 
 require 'fishbowl/ext'
-
 require 'fishbowl/version'
 require 'fishbowl/errors'
 require 'fishbowl/requests'

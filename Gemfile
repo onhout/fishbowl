@@ -14,3 +14,6 @@ end
 group :test do
   gem 'spork'
 end
+
+gem "simplecov", "~> 0.16.1"
+gem 'xml-simple', '1.1.5'

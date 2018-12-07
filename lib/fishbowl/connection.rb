@@ -66,11 +66,11 @@ module Fishbowl
       Nokogiri::XML::Builder.new do |xml|
         xml.request {
           xml.LoginRq {
-            xml.IAID          Fishbowl.configuration.app_id
-            xml.IAName        Fishbowl.configuration.app_name
+            xml.IAID Fishbowl.configuration.app_id
+            xml.IAName Fishbowl.configuration.app_name
             xml.IADescription Fishbowl.configuration.app_description
-            xml.UserName      Fishbowl.configuration.username
-            xml.UserPassword  encoded_password
+            xml.UserName Fishbowl.configuration.username
+            xml.UserPassword encoded_password
           }
         }
       end

@@ -12,6 +12,7 @@ module Fishbowl::Requests
 
     code, response = Fishbowl::Objects::BaseObject.new.send_request(builder, "InvQtyRs")
 
-    response.xpath("//FbiXml/FbiMsgsRs/InvQtyRs")
+    # response.xpath("//FbiXml/FbiMsgsRs/InvQtyRs")
+    XmlSimple.xml_in(response.to_s)
   end
 end
