@@ -9,7 +9,7 @@ module Fishbowl::Objects
       [code, response]
     end
 
-  protected
+    protected
 
     def self.attributes
       %w{ID}
@@ -33,7 +33,7 @@ module Fishbowl::Objects
       end
     end
 
-  private
+    private
 
     def build_request(request)
       new_req = Nokogiri::XML::Builder.new do |xml|

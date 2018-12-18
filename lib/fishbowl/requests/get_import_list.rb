@@ -8,6 +8,6 @@ module Fishbowl::Requests
     # #end
     #
     # results
-    Hash.from_xml(response.to_s)
+    Hash.from_xml(response.to_s)['FbiXml']['FbiMsgsRs']['ImportListRs']
   end
 end
