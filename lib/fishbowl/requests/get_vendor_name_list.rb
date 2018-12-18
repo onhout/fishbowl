@@ -8,6 +8,6 @@ module Fishbowl::Requests
     # #end
     #
     # results
-    XmlSimple.xml_in(response.to_s)
+    Hash.from_xml(response.to_s)
   end
 end

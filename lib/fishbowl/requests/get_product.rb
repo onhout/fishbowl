@@ -12,8 +12,8 @@ module Fishbowl::Requests
     end
 
     code, response = Fishbowl::Objects::BaseObject.new.send_request(builder, rs)
-
+    Hash.from_xml(response.to_s)['FbiXml']['FbiMsgsRs'][rs]
     # response.xpath("//FbiXml/FbiMsgsRs/ProductGetRs/Product")
-    XmlSimple.xml_in(response.to_s)["FbiMsgsRs"][0][rs]
+    # Hash.from_xml(response.to_s)["FbiMsgsRs"][0][rs]
   end
 end

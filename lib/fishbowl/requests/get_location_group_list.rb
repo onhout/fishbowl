@@ -8,7 +8,7 @@ module Fishbowl::Requests
     # #end
     #
     # results
-    data = XmlSimple.xml_in(response.to_s)
+    data = Hash.from_xml(response.to_s)
     data['FbiMsgsRs']['VendorNameListRs']
   end
 end

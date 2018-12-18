@@ -14,6 +14,6 @@ module Fishbowl::Requests
     code, response = Fishbowl::Objects::BaseObject.new.send_request(builder, "GetTotalInventoryRs")
 
     # response.xpath("//FbiXml/FbiMsgsRs/GetTotalInventoryRs")
-    XmlSimple.xml_in(response.to_s)
+    Hash.from_xml(response.to_s)
   end
 end

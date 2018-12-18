@@ -7,7 +7,7 @@ gem 'rspec'
 gem 'equivalent-xml'
 gem 'nokogiri', '~> 1.7.0'
 gem "simplecov", "~> 0.16.1"
-gem 'xml-simple', '1.1.5'
+gem 'activesupport', '~> 4.2.3'
 
 group :localtest do
   gem 'pry'

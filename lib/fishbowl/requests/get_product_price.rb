@@ -17,6 +17,6 @@ module Fishbowl::Requests
     _, _, response = Fishbowl::Objects::BaseObject.new.send_request(builder, "GetAccountBalanceRs")
 
     # response.xpath("//Account/Balance").first.inner_text
-    XmlSimple.xml_in(response.to_s)
+    Hash.from_xml(response.to_s)
   end
 end

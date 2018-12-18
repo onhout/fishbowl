@@ -10,6 +10,6 @@ module Fishbowl::Requests
     # end
     #
     # results
-    XmlSimple.xml_in(response.to_s)["FbiMsgsRs"][0][rs]
+    Hash.from_xml(response.to_s)["FbiMsgsRs"][0][rs]
   end
 end

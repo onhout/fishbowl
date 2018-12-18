@@ -2,7 +2,7 @@ require 'socket'
 require 'base64'
 require 'singleton'
 require 'nokogiri'
-require 'xmlsimple'
+require 'active_support/all'
 
 require 'fishbowl/ext'
 require 'fishbowl/version'

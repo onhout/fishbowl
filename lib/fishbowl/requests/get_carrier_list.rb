@@ -11,9 +11,9 @@ module Fishbowl::Requests
     # end
     #
     # results
-    # data = XmlSimple.xml_in(response.to_s)["FbiMsgsRs"]
+    # data = Hash.from_xml(response.to_s)["FbiMsgsRs"]
     # puts data["statusCode"]
 
-    XmlSimple.xml_in(response.to_s)["FbiMsgsRs"][0][rs]
+    Hash.from_xml(response.to_s)["FbiMsgsRs"][0][rs]
   end
 end
