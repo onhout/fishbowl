@@ -9,17 +9,13 @@ module Fishbowl::Requests
   private
 
   def self.build_request(options)
-    rows = Nokogiri::XML::Builder.new do |xml|
-      xml.Rows {
-        options[:rows].each do |l|
-          xml.Row l
-        end
-      }
-    end
+
     Nokogiri::XML::Builder.new do |xml|
       xml.ImportRq {
         xml.Type options[:type]
-        xml << rows.doc.root.to_xml
+        xml.Rows {
+          xml.Row options[:rows]
+        }
       }
     end
   end
