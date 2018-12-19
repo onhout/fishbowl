@@ -24,7 +24,7 @@ module Fishbowl
       @password = Fishbowl.configuration.password
 
       code, _ = Fishbowl::Objects::BaseObject.new.send_request(login_request)
-      Fishbowl::Errors.confirm_success_or_raise(code)
+      # Fishbowl::Errors.confirm_success_or_raise(code)
 
       raise "Login failed" unless code.eql? "1000"
 

@@ -3,7 +3,7 @@ module Fishbowl::Objects
     @@ticket = nil
     def send_request(request, expected_response = 'FbiMsgsRs')
       code, response = Fishbowl::Connection.send(build_request(request), expected_response)
-      Fishbowl::Errors.confirm_success_or_raise(code)
+      # Fishbowl::Errors.confirm_success_or_raise(code)
       puts "Response successful" if Fishbowl.configuration.debug.eql? true
       @@ticket = response.xpath("/FbiXml/Ticket/Key").text
       [code, response]
